@@ -1,0 +1,38 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#efefef",
+    "titleBar.inactiveBackground": "#121212",
+    "titleBar.activeForeground": "#111",
+    "titleBar.inactiveForeground": "#666"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "theme/*.js": true,
+    ".expo": true,
+    ".yarn": true,
+    "expo-env.d.ts": true
+  },
+  "explorer.autoReveal": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "yarn.lock,.yarnrc.yml,.gitignore,README.md,LICENSE",
+    "tsconfig.json": "*.d.ts,tsconfig.*.json",
+    "app.json": "metro.config.js,babel.config.js,.svgrrc.js,tailwind.config.js",
+    ".eslintrc.js": ".prettierrc,.eslintcache,.eslintignore"
+  },
+  "eslint.useFlatConfig": false,
+  "prettier.prettierPath": "",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.foldingImportsByDefault": true
+}
