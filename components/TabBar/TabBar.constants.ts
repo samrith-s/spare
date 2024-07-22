@@ -11,7 +11,7 @@ import { type IconLike } from '../ui/Icon';
 export enum TabBarRoutes {
   HOME = 'home',
   OVERVIEW = 'overview',
-  CATEGORIES = 'budget',
+  CATEGORIES = 'categories',
   SETTINGS = 'settings',
 }
 
