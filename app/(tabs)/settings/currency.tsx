@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
 import { StackActions } from '@react-navigation/native';
 
@@ -23,6 +29,22 @@ export default function CurrencyScreen() {
     () => CURRENCIES.findIndex((currency) => currency.code === current.code),
     [current.code]
   );
+  const ref = useRef<FlashList<CurrencyData>>(null);
+  const mounted = useRef(false);
+
+  const handleLayout = useCallback(() => {
+    let timeout: NodeJS.Timeout;
+    if (!mounted.current) {
+      timeout = setTimeout(() => {
+        ref.current?.scrollToIndex({ index: idx, animated: false });
+        mounted.current = true;
+      }, 1);
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [idx]);
 
   const renderItem = useCallback<ListRenderItem<CurrencyData>>(
     ({ item, extraData }) => {
@@ -44,9 +66,7 @@ export default function CurrencyScreen() {
           )}
         >
           <Text className={cn('shrink-1')}>{item.name}</Text>
-          <Text className={cn('text-foreground', 'shrink-0')}>
-            {item.symbol}
-          </Text>
+          <Text className={cn('text-muted', 'shrink-0')}>{item.symbol}</Text>
         </Pressable>
       );
     },
@@ -69,7 +89,10 @@ export default function CurrencyScreen() {
   }, [query]);
 
   return (
-    <Screen className={cn('gap-4')}>
+    <Screen
+      className={cn('gap-4')}
+      onLayout={handleLayout}
+    >
       <TextInput
         clearButtonMode='always'
         placeholder='Search currency'
@@ -77,9 +100,9 @@ export default function CurrencyScreen() {
         onChangeText={setQuery}
       />
       <FlashList
+        ref={ref}
         extraData={current.code}
-        initialScrollIndex={idx}
-        estimatedItemSize={40}
+        estimatedItemSize={48}
         data={currencies}
         renderItem={renderItem}
       />
