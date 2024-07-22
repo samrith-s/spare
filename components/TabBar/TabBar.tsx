@@ -20,7 +20,7 @@ export function TabBar({ state, navigation }: BottomTabBarProps) {
     <Box
       className={cn(
         'flex-row',
-        'pt-4',
+        'pt-2',
         'self-center',
         'items-center',
         'justify-between',
