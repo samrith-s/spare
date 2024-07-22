@@ -5,6 +5,7 @@ import Animated from 'react-native-reanimated';
 import { useColorScheme } from 'nativewind';
 
 import { IconExchangeDollarFill } from '~/assets/icons/Finance/ExchangeDollarFill';
+import { IconVipDiamondFill } from '~/assets/icons/Finance/VipDiamondFill';
 import { IconHeadphoneFill } from '~/assets/icons/Media/HeadphoneFill';
 import { IconMoonClearFill } from '~/assets/icons/Weather/MoonClearFill';
 import { SettingsItem } from '~/components/settings/SettingsItem';
@@ -43,9 +44,8 @@ export default function SettingsScreen() {
 
         <SettingsItem.Group title='Help'>
           <SettingsItem.Entry
-            color='bg-yellow-600'
             label='Upgrade to Premium'
-            icon={IconExchangeDollarFill}
+            icon={IconVipDiamondFill}
             href='/settings/currency'
           />
           <SettingsItem.Entry

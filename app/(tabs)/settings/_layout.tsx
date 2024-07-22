@@ -9,11 +9,13 @@ export default function SettingsLayout() {
     <Stack
       screenOptions={{
         header: headerRenderer,
+        headerBackVisible: true,
       }}
     >
       <Stack.Screen
         name='index'
         options={{
+          headerBackVisible: false,
           title: 'Settings',
         }}
       />
