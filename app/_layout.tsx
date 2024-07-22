@@ -1,4 +1,6 @@
 import 'react-native-reanimated';
+import 'react-native-url-polyfill/auto';
+
 import '../assets/css/global.css';
 
 import { useEffect } from 'react';
@@ -22,6 +24,7 @@ import {
 import { useColorScheme, vars } from 'nativewind';
 
 import { Screen } from '~/components/ui/Box';
+import { CurrencyProvider } from '~/providers/Currency';
 import { COLORS } from '~/theme';
 import { cn } from '~/utilities/cn';
 
@@ -67,24 +70,31 @@ export default function RootLayout() {
         className={cn('flex-1')}
         style={vars(COLORS[scheme])}
       >
-        <Screen>
-          <Stack
-            screenOptions={{
-              headerShown: false,
-            }}
-            initialRouteName='add'
-          >
-            <Stack.Screen name='(tabs)' />
-            <Stack.Screen
-              name='add'
-              options={{
-                presentation: 'modal',
-                title: 'Add expense',
+        <CurrencyProvider>
+          <Screen>
+            <Stack
+              screenOptions={{
+                headerShown: false,
               }}
-            />
-            <Stack.Screen name='+not-found' />
-          </Stack>
-        </Screen>
+              initialRouteName='add'
+            >
+              <Stack.Screen
+                name='(tabs)'
+                options={{
+                  headerBackVisible: false,
+                }}
+              />
+              <Stack.Screen
+                name='add'
+                options={{
+                  presentation: 'modal',
+                  title: 'Add expense',
+                }}
+              />
+              <Stack.Screen name='+not-found' />
+            </Stack>
+          </Screen>
+        </CurrencyProvider>
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );
