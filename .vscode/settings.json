@@ -28,7 +28,7 @@
   "explorer.fileNesting.patterns": {
     "package.json": "yarn.lock,.yarnrc.yml,.gitignore,README.md,LICENSE",
     "tsconfig.json": "*.d.ts,tsconfig.*.json",
-    "app.json": "metro.config.js,babel.config.js,.svgrrc.js,tailwind.config.js",
+    "app.json": "eas.json,metro.config.js,babel.config.js,.svgrrc.js,tailwind.config.js",
     ".eslintrc.js": ".prettierrc,.eslintcache,.eslintignore"
   },
   "eslint.useFlatConfig": false,

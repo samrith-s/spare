@@ -4,21 +4,27 @@
     "slug": "spare",
     "version": "1.0.0",
     "orientation": "portrait",
+    "description": "A beautifully simple family budgeting app",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "spare",
     "userInterfaceStyle": "automatic",
+    "backgroundColor": "#111111",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#111111"
     },
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "get.spare.app",
+      "supportsTablet": false,
+      "userInterfaceStyle": "automatic"
     },
     "android": {
+      "package": "get.spare.app",
+      "userInterfaceStyle": "automatic",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#111111"
       }
     },
     "web": {
@@ -29,6 +35,15 @@
     "plugins": ["expo-router", "expo-font"],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "98bb1b56-f159-4006-b765-d026e2411224"
+      }
+    },
+    "owner": "samrithshankar"
   }
 }

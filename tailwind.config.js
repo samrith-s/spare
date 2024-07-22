@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { COLOR_MAPPING } = require('./theme/index.js');
+let COLOR_MAPPING;
 
-console.log(COLOR_MAPPING);
+try {
+  COLOR_MAPPING = require('./theme/index.js').COLOR_MAPPING;
+} catch (e) {
+  console.error(e);
+  COLOR_MAPPING = {};
+}
 
 module.exports = {
   content: [

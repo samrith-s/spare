@@ -12,6 +12,9 @@ npm-debug.*
 .eslintcache
 web-build/
 assets/icons
+android
+ios
+theme/index.js
 
 # macOS
 .DS_Store
