@@ -11,6 +11,7 @@ export default function TabLayout() {
     <Screen>
       <Tabs
         screenOptions={{
+          lazy: true,
           headerShown: false,
         }}
         tabBar={(props) => <TabBar {...props} />}
