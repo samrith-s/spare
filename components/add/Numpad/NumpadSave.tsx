@@ -9,11 +9,8 @@ import {
 
 import { IconCheckFill } from '~/assets/icons/System/CheckFill';
 
-import { Icon } from '~/components/ui/Icon';
-import {
-  PRESSABLE_DISABLED_ANIMATION_CONFIG,
-  Pressable,
-} from '~/components/ui/Pressable';
+import { Icon } from '~/ui/Icon';
+import { PRESSABLE_DISABLED_ANIMATION_CONFIG, Pressable } from '~/ui/Pressable';
 
 import { useColor } from '~/hooks/useColor';
 import { cn } from '~/utilities/cn';

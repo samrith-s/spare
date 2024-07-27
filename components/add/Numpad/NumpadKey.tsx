@@ -1,7 +1,7 @@
 import { useCallback, useContext } from 'react';
 
-import { Pressable } from '~/components/ui/Pressable';
-import { Text } from '~/components/ui/Text';
+import { Pressable } from '~/ui/Pressable';
+import { Text } from '~/ui/Text';
 import { cn } from '~/utilities/cn';
 
 import { NumpadDisabledContext, NumpadSetterContext } from './numpad-context';

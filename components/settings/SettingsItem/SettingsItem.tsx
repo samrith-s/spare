@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'expo-router';
 
-import { Box } from '~/components/ui/Box';
+import { Box } from '~/ui/Box';
 import { cn } from '~/utilities/cn';
 
 import { Icon, type IconLike } from '../../ui/Icon';

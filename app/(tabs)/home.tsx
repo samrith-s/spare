@@ -1,7 +1,7 @@
 import { ScrollView } from 'react-native-gesture-handler';
 
-import { Box, Screen } from '~/components/ui/Box';
-import { Text } from '~/components/ui/Text';
+import { Box, Screen } from '~/ui/Box';
+import { Text } from '~/ui/Text';
 
 export default function HomeScreen() {
   return (

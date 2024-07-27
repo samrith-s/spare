@@ -1,6 +1,6 @@
 import { type LayoutChangeEvent } from 'react-native';
 
-import { Box } from '~/components/ui/Box';
+import { Box } from '~/ui/Box';
 
 import { cn } from '~/utilities/cn';
 

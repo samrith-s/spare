@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box } from '~/components/ui/Box';
+import { Box } from '~/ui/Box';
 import { cn } from '~/utilities/cn';
 
 import { SettingsTitle } from './SettingsTitle';

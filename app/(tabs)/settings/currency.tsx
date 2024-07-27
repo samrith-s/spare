@@ -11,11 +11,11 @@ import { StackActions } from '@react-navigation/native';
 import { useNavigation } from 'expo-router';
 
 import { CURRENCIES, type CurrencyData } from '~/assets/data/currencies';
-import { KeyboardAvoidingView } from '~/components/ui/Box';
-import { List, type ListRenderItem } from '~/components/ui/List';
-import { Pressable } from '~/components/ui/Pressable';
-import { Text } from '~/components/ui/Text';
-import { TextInput } from '~/components/ui/TextInput';
+import { KeyboardAvoidingView } from '~/ui/Box';
+import { List, type ListRenderItem } from '~/ui/List';
+import { Pressable } from '~/ui/Pressable';
+import { Text } from '~/ui/Text';
+import { TextInput } from '~/ui/TextInput';
 import { useCurrency } from '~/providers/Currency';
 import { cn } from '~/utilities/cn';
 

@@ -9,8 +9,8 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-import { Icon } from '~/components/ui/Icon';
-import { Pressable } from '~/components/ui/Pressable';
+import { Icon } from '~/ui/Icon';
+import { Pressable } from '~/ui/Pressable';
 import { cn } from '~/utilities/cn';
 
 import { TAB_BAR_CONFIG } from './TabBar.constants';

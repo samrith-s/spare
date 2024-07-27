@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text } from '~/components/ui/Text';
+import { Text } from '~/ui/Text';
 import { cn } from '~/utilities/cn';
 
 export type SettingsTitleProps = {

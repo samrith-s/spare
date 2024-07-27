@@ -1,7 +1,7 @@
 import { Stack, useNavigation } from 'expo-router';
 
-import { Screen } from '~/components/ui/Box';
-import { Text } from '~/components/ui/Text';
+import { Screen } from '~/ui/Box';
+import { Text } from '~/ui/Text';
 import { cn } from '~/utilities/cn';
 
 export default function NotFoundScreen() {

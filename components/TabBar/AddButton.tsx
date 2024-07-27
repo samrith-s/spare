@@ -12,7 +12,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { IconAddLine } from '~/assets/icons/System/AddLine';
-import { Icon } from '~/components/ui/Icon';
+import { Icon } from '~/ui/Icon';
 import { cn } from '~/utilities/cn';
 
 import { Box } from '../ui/Box';

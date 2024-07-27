@@ -3,6 +3,7 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
+      "~/ui/*": ["./components/ui/*"],
       "~/*": ["./*"]
     }
   },

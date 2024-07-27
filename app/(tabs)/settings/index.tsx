@@ -10,8 +10,8 @@ import { IconHeadphoneFill } from '~/assets/icons/Media/HeadphoneFill';
 import { IconMoonClearFill } from '~/assets/icons/Weather/MoonClearFill';
 import { SettingsItem } from '~/components/settings/SettingsItem';
 
-import { Screen } from '~/components/ui/Box';
-import { Switch } from '~/components/ui/Switch';
+import { Screen } from '~/ui/Box';
+import { Switch } from '~/ui/Switch';
 import { cn } from '~/utilities/cn';
 
 export default function SettingsScreen() {

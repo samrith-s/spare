@@ -10,10 +10,10 @@ import { IconListRadio } from '~/assets/icons/Editor/ListRadio';
 import { Datepicker } from '~/components/add/Datepicker';
 import { Numpad } from '~/components/add/Numpad';
 
-import { Box, Screen } from '~/components/ui/Box';
-import { Icon } from '~/components/ui/Icon';
-import { Pressable } from '~/components/ui/Pressable';
-import { Bold, Text } from '~/components/ui/Text';
+import { Box, Screen } from '~/ui/Box';
+import { Icon } from '~/ui/Icon';
+import { Pressable } from '~/ui/Pressable';
+import { Bold, Text } from '~/ui/Text';
 import { cn } from '~/utilities/cn';
 
 export default function AddScreen() {

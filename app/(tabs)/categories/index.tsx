@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Screen } from '~/components/ui/Box';
-import { Link } from '~/components/ui/Link';
-import { Text } from '~/components/ui/Text';
-import { TextInput } from '~/components/ui/TextInput';
+import { Screen } from '~/ui/Box';
+import { Link } from '~/ui/Link';
+import { Text } from '~/ui/Text';
+import { TextInput } from '~/ui/TextInput';
 import { cn } from '~/utilities/cn';
 
 export default function CategoriesScreen() {

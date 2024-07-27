@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
-import { Box } from '~/components/ui/Box';
-import { Text } from '~/components/ui/Text';
+import { Box } from '~/ui/Box';
+import { Text } from '~/ui/Text';
 
 import { useCurrency } from '~/providers/Currency';
 import { cn } from '~/utilities/cn';

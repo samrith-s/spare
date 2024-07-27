@@ -4,7 +4,7 @@ import { Tabs } from 'expo-router';
 
 import { headerRenderer } from '~/components/Header';
 import { TAB_BAR_CONFIG, TabBar } from '~/components/TabBar';
-import { Screen } from '~/components/ui/Box';
+import { Screen } from '~/ui/Box';
 
 export default function TabLayout() {
   return (
