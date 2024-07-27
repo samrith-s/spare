@@ -3,11 +3,14 @@ import 'react-native-url-polyfill/auto';
 
 import '../assets/css/global.css';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { Appearance } from 'react-native';
 
+import { type Theme, ThemeProvider } from '@react-navigation/native';
+
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { enableFreeze } from 'react-native-screens';
@@ -23,7 +26,6 @@ import {
 } from '@expo-google-fonts/inter';
 import { useColorScheme, vars } from 'nativewind';
 
-import { Screen } from '~/components/ui/Box';
 import { CurrencyProvider } from '~/providers/Currency';
 import { COLORS } from '~/theme';
 import { cn } from '~/utilities/cn';
@@ -44,6 +46,21 @@ export default function RootLayout() {
 
   const scheme = colorScheme as keyof typeof COLORS;
 
+  const navigatorTheme = useMemo<Theme>(
+    () => ({
+      dark: colorScheme === 'dark',
+      colors: {
+        background: COLORS[scheme]['--background'],
+        card: COLORS[scheme]['--background'],
+        border: COLORS[scheme]['--secondary'],
+        text: COLORS[scheme]['--foreground'],
+        primary: COLORS[scheme]['--primary'],
+        notification: COLORS[scheme]['--secondary'],
+      },
+    }),
+    [colorScheme, scheme]
+  );
+
   useEffect(() => {
     const listener = Appearance.addChangeListener((scheme) => {
       setColorScheme(scheme.colorScheme || 'light');
@@ -60,42 +77,40 @@ export default function RootLayout() {
     }
   }, [loaded]);
 
-  if (!loaded) {
-    return null;
-  }
-
   return (
-    <SafeAreaProvider>
-      <GestureHandlerRootView
-        className={cn('flex-1')}
-        style={vars(COLORS[scheme])}
-      >
-        <CurrencyProvider>
-          <Screen>
-            <Stack
-              screenOptions={{
-                headerShown: false,
-              }}
-              initialRouteName='add'
-            >
-              <Stack.Screen
-                name='(tabs)'
-                options={{
-                  headerBackVisible: false,
+    <KeyboardProvider>
+      <ThemeProvider value={navigatorTheme}>
+        <SafeAreaProvider>
+          <GestureHandlerRootView
+            className={cn('flex-1')}
+            style={vars(COLORS[scheme])}
+          >
+            <CurrencyProvider>
+              <Stack
+                screenOptions={{
+                  headerShown: false,
                 }}
-              />
-              <Stack.Screen
-                name='add'
-                options={{
-                  presentation: 'modal',
-                  title: 'Add expense',
-                }}
-              />
-              <Stack.Screen name='+not-found' />
-            </Stack>
-          </Screen>
-        </CurrencyProvider>
-      </GestureHandlerRootView>
-    </SafeAreaProvider>
+              >
+                <Stack.Screen
+                  name='(tabs)'
+                  options={{
+                    animation: 'fade',
+                    headerBackVisible: false,
+                  }}
+                />
+                <Stack.Screen
+                  name='add'
+                  options={{
+                    presentation: 'modal',
+                    title: 'Add expense',
+                  }}
+                />
+                <Stack.Screen name='+not-found' />
+              </Stack>
+            </CurrencyProvider>
+          </GestureHandlerRootView>
+        </SafeAreaProvider>
+      </ThemeProvider>
+    </KeyboardProvider>
   );
 }

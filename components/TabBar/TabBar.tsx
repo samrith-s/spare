@@ -2,6 +2,7 @@ import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { TAB_BAR_HEIGHT } from '~/constants/Heights';
 import { cn } from '~/utilities/cn';
 
 import { Box } from '../ui/Box';
@@ -27,6 +28,7 @@ export function TabBar({ state, navigation }: BottomTabBarProps) {
         'px-4'
       )}
       style={{
+        height: TAB_BAR_HEIGHT,
         paddingBottom: insets.bottom,
       }}
     >
