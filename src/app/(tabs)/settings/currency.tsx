@@ -10,13 +10,13 @@ import { StackActions } from '@react-navigation/native';
 
 import { useNavigation } from 'expo-router';
 
-import { CURRENCIES, type CurrencyData } from '~/assets/data/currencies';
+import { CURRENCIES, type CurrencyData } from '~/data/currencies';
+import { useCurrency } from '~/providers/Currency';
 import { KeyboardAvoidingView } from '~/ui/Box';
 import { List, type ListRenderItem } from '~/ui/List';
 import { Pressable } from '~/ui/Pressable';
 import { Text } from '~/ui/Text';
 import { TextInput } from '~/ui/TextInput';
-import { useCurrency } from '~/providers/Currency';
 import { cn } from '~/utilities/cn';
 
 export default function CurrencyScreen() {

@@ -1,10 +1,10 @@
-import { IconHome6Fill } from '~/assets/icons/Buildings/Home6Fill';
-import { IconHome6Line } from '~/assets/icons/Buildings/Home6Line';
-import { IconPieChart2Fill } from '~/assets/icons/Business/PieChart2Fill';
-import { IconPieChart2Line } from '~/assets/icons/Business/PieChart2Line';
-import { IconListRadio } from '~/assets/icons/Editor/ListRadio';
-import { IconSettings2Fill } from '~/assets/icons/System/Settings2Fill';
-import { IconSettings2Line } from '~/assets/icons/System/Settings2Line';
+import { IconHome6Fill } from '~/icons/Buildings/Home6Fill';
+import { IconHome6Line } from '~/icons/Buildings/Home6Line';
+import { IconPieChart2Fill } from '~/icons/Business/PieChart2Fill';
+import { IconPieChart2Line } from '~/icons/Business/PieChart2Line';
+import { IconListRadio } from '~/icons/Editor/ListRadio';
+import { IconSettings2Fill } from '~/icons/System/Settings2Fill';
+import { IconSettings2Line } from '~/icons/System/Settings2Line';
 
 import { type IconLike } from '../ui/Icon';
 

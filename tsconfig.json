@@ -3,8 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "~/ui/*": ["./components/ui/*"],
-      "~/*": ["./*"]
+      "~/ui/*": ["./src/components/ui/*"],
+      "~/*": ["./src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

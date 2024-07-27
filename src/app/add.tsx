@@ -4,11 +4,11 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import dayjs from 'dayjs';
 
-import { IconCalendar2Fill } from '~/assets/icons/Business/Calendar2Fill';
-
-import { IconListRadio } from '~/assets/icons/Editor/ListRadio';
 import { Datepicker } from '~/components/add/Datepicker';
 import { Numpad } from '~/components/add/Numpad';
+import { IconCalendar2Fill } from '~/icons/Business/Calendar2Fill';
+
+import { IconListRadio } from '~/icons/Editor/ListRadio';
 
 import { Box, Screen } from '~/ui/Box';
 import { Icon } from '~/ui/Icon';

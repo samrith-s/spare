@@ -4,10 +4,10 @@ import Animated from 'react-native-reanimated';
 
 import { useColorScheme } from 'nativewind';
 
-import { IconExchangeDollarFill } from '~/assets/icons/Finance/ExchangeDollarFill';
-import { IconVipDiamondFill } from '~/assets/icons/Finance/VipDiamondFill';
-import { IconHeadphoneFill } from '~/assets/icons/Media/HeadphoneFill';
-import { IconMoonClearFill } from '~/assets/icons/Weather/MoonClearFill';
+import { IconExchangeDollarFill } from '~/icons/Finance/ExchangeDollarFill';
+import { IconVipDiamondFill } from '~/icons/Finance/VipDiamondFill';
+import { IconHeadphoneFill } from '~/icons/Media/HeadphoneFill';
+import { IconMoonClearFill } from '~/icons/Weather/MoonClearFill';
 import { SettingsItem } from '~/components/settings/SettingsItem';
 
 import { Screen } from '~/ui/Box';

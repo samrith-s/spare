@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 
-import { IconDeleteBackFill } from '~/assets/icons/System/DeleteBackFill';
+import { IconDeleteBackFill } from '~/icons/System/DeleteBackFill';
 import { Icon } from '~/ui/Icon';
 import { Pressable } from '~/ui/Pressable';
 

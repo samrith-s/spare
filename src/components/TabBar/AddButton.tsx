@@ -11,7 +11,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-import { IconAddLine } from '~/assets/icons/System/AddLine';
+import { IconAddLine } from '~/icons/System/AddLine';
 import { Icon } from '~/ui/Icon';
 import { cn } from '~/utilities/cn';
 

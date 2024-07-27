@@ -1,7 +1,7 @@
 import 'react-native-reanimated';
 import 'react-native-url-polyfill/auto';
 
-import '../assets/css/global.css';
+import '../css/global.css';
 
 import { useEffect, useMemo } from 'react';
 
@@ -38,7 +38,7 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const { colorScheme, setColorScheme } = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    SpaceMono: require('../../assets/fonts/SpaceMono-Regular.ttf'),
     Inter_400Regular,
     Inter_600SemiBold,
     Inter_700Bold,

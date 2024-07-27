@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { type Currencies } from '~/assets/data/currencies';
+import { type Currencies } from '~/data/currencies';
 
 import { CurrencyContext } from './Currency.context';
 

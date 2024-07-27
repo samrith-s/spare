@@ -11,10 +11,10 @@ npm-debug.*
 *.orig.*
 .eslintcache
 web-build/
-assets/icons
+**/icons
 android
 ios
-theme/index.js
+src/**/*.js
 
 # macOS
 .DS_Store

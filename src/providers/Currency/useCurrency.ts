@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react';
 
-import { CURRENCIES } from '~/assets/data/currencies';
+import { CURRENCIES } from '~/data/currencies';
 
 import { CurrencyContext } from './Currency.context';
 

@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { type Currencies } from '~/assets/data/currencies';
+import { type Currencies } from '~/data/currencies';
 import { noop } from '~/utilities/noop';
 
 export type CurrencyContextType = [Currencies, (currency: Currencies) => void];

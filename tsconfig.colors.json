@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["theme/**/*.ts"],
+  "include": ["src/theme/**/*.ts"],
   "compilerOptions": {
     "module": "CommonJS",
     "noEmit": false

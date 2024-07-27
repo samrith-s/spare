@@ -3,6 +3,6 @@
 set -e
 
 node_modules/.bin/svgr \
-    --out-dir assets/icons \
+    --out-dir src/icons \
     node_modules/remixicon/icons \
     $@

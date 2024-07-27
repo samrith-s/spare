@@ -7,7 +7,7 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 
-import { IconCheckFill } from '~/assets/icons/System/CheckFill';
+import { IconCheckFill } from '~/icons/System/CheckFill';
 
 import { Icon } from '~/ui/Icon';
 import { PRESSABLE_DISABLED_ANIMATION_CONFIG, Pressable } from '~/ui/Pressable';

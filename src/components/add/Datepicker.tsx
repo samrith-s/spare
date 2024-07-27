@@ -13,8 +13,8 @@ import dayjs, { type Dayjs } from 'dayjs';
 
 import { type SingleChange } from 'react-native-ui-datepicker/lib/typescript/src/types';
 
-import { IconArrowLeftWideFill } from '~/assets/icons/Arrows/ArrowLeftWideFill';
-import { IconArrowRightWideFill } from '~/assets/icons/Arrows/ArrowRightWideFill';
+import { IconArrowLeftWideFill } from '~/icons/Arrows/ArrowLeftWideFill';
+import { IconArrowRightWideFill } from '~/icons/Arrows/ArrowRightWideFill';
 import { useColor } from '~/hooks/useColor';
 import { cn } from '~/utilities/cn';
 
