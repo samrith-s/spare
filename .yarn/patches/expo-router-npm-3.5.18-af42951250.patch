@@ -1,0 +1,23 @@
+diff --git a/build/typed-routes/generate.js b/build/typed-routes/generate.js
+index 1e621830d26f90b3105d326ae31690c1e51730d1..b2b18e5787087cb7981ed50e3fd39ae126f35e6d 100644
+--- a/build/typed-routes/generate.js
++++ b/build/typed-routes/generate.js
+@@ -26,7 +26,7 @@ function getTypedRoutesDeclarationFile(ctx) {
+     return (node_fs_1.default
+         .readFileSync(path_1.default.join(__dirname, '../../types/expo-router.d.ts'), 'utf-8')
+         // Swap from being a namespace to a module
+-        .replace('declare namespace ExpoRouter {', `declare module "expo-router" {`)
++        .replace(`import type { ReactNode } from 'react';\nimport type { TextProps, GestureResponderEvent } from 'react-native';\n\nexport namespace ExpoRouter {`, `declare module "expo-router" {\n  import type { ReactNode } from 'react';\n  import type { TextProps, GestureResponderEvent } from 'react-native';\n  export * from "expo-router/build";\n`)
+         // Add the route values
+         .replace('type StaticRoutes = string;', `type StaticRoutes = ${setToUnionType(staticRoutes)};`)
+         .replace('type DynamicRoutes<T extends string> = string;', `type DynamicRoutes<T extends string> = ${setToUnionType(dynamicRoutes)};`)
+@@ -41,7 +41,8 @@ function walkRouteNode(routeNode, staticRoutes, dynamicRoutes, dynamicRouteConte
+         return;
+     addRouteNode(routeNode, staticRoutes, dynamicRoutes, dynamicRouteContextKeys);
+     for (const child of routeNode.children) {
+-        walkRouteNode(child, staticRoutes, dynamicRoutes, dynamicRouteContextKeys);
++        const childWithPrefixedRoute = { ...child, route: `${routeNode.route}/${child.route}` };
++        walkRouteNode(childWithPrefixedRoute, staticRoutes, dynamicRoutes, dynamicRouteContextKeys);
+     }
+ }
+ /**

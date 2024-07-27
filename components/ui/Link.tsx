@@ -1,8 +1,12 @@
-import { Link as ExpoLink } from 'expo-router';
-
-import { type LinkProps } from 'expo-router/build/link/Link';
+import {
+  Link as ExpoLink,
+  type LinkProps as ExpoLinkProps,
+  type Href,
+} from 'expo-router';
 
 import { Text } from './Text';
+
+export type LinkProps = ExpoLinkProps<Href>;
 
 export function Link({ children, href, ...rest }: LinkProps) {
   return (

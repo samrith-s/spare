@@ -20,7 +20,7 @@
     "**/Thumbs.db": true,
     "theme/*.js": true,
     ".expo": true,
-    ".yarn": true,
+    ".yarn": false,
     "expo-env.d.ts": true
   },
   "explorer.autoReveal": true,

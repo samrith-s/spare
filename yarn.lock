@@ -7638,7 +7638,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-router@npm:~3.5.18":
+"expo-router@npm:3.5.18":
   version: 3.5.18
   resolution: "expo-router@npm:3.5.18"
   dependencies:
@@ -7668,6 +7668,39 @@ __metadata:
     react-native-reanimated:
       optional: true
   checksum: 10c0/c9ac20972eb1572a458e124f9c9798f2e438a29a76019ace517acb1139d6dda393987e6509e293673fee46cff032138046991f9935ebbdcf15379f9707cb7375
+  languageName: node
+  linkType: hard
+
+"expo-router@patch:expo-router@npm%3A3.5.18#~/.yarn/patches/expo-router-npm-3.5.18-af42951250.patch":
+  version: 3.5.18
+  resolution: "expo-router@patch:expo-router@npm%3A3.5.18#~/.yarn/patches/expo-router-npm-3.5.18-af42951250.patch::version=3.5.18&hash=799d69"
+  dependencies:
+    "@expo/metro-runtime": "npm:3.2.1"
+    "@expo/server": "npm:^0.4.0"
+    "@radix-ui/react-slot": "npm:1.0.1"
+    "@react-navigation/bottom-tabs": "npm:~6.5.7"
+    "@react-navigation/native": "npm:~6.1.6"
+    "@react-navigation/native-stack": "npm:~6.9.12"
+    expo-splash-screen: "npm:0.27.5"
+    react-native-helmet-async: "npm:2.0.4"
+    schema-utils: "npm:^4.0.1"
+  peerDependencies:
+    "@react-navigation/drawer": ^6.5.8
+    expo: "*"
+    expo-constants: "*"
+    expo-linking: "*"
+    expo-status-bar: "*"
+    react-native-reanimated: "*"
+    react-native-safe-area-context: "*"
+    react-native-screens: "*"
+  peerDependenciesMeta:
+    "@react-navigation/drawer":
+      optional: true
+    "@testing-library/jest-native":
+      optional: true
+    react-native-reanimated:
+      optional: true
+  checksum: 10c0/21cf9119e561b746e7758057c03491f8df222e04b2170c2c630e8807d667e49d0588983a4b760b7fcdef184337be0258565b3b28932657923f8a4ff3508b07c0
   languageName: node
   linkType: hard
 
@@ -13892,7 +13925,7 @@ __metadata:
     expo-dev-client: "npm:~4.0.20"
     expo-font: "npm:~12.0.9"
     expo-linking: "npm:~6.3.1"
-    expo-router: "npm:~3.5.18"
+    expo-router: "patch:expo-router@npm%3A3.5.18#~/.yarn/patches/expo-router-npm-3.5.18-af42951250.patch"
     expo-splash-screen: "npm:~0.27.5"
     expo-status-bar: "npm:~1.12.1"
     expo-system-ui: "npm:~3.0.7"
