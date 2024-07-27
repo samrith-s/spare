@@ -10,10 +10,9 @@ import { StackActions } from '@react-navigation/native';
 
 import { useNavigation } from 'expo-router';
 
-import { FlashList, type ListRenderItem } from '@shopify/flash-list';
-
 import { CURRENCIES, type CurrencyData } from '~/assets/data/currencies';
-import { Screen } from '~/components/ui/Box';
+import { KeyboardAvoidingView } from '~/components/ui/Box';
+import { List, type ListRenderItem } from '~/components/ui/List';
 import { Pressable } from '~/components/ui/Pressable';
 import { Text } from '~/components/ui/Text';
 import { TextInput } from '~/components/ui/TextInput';
@@ -29,7 +28,7 @@ export default function CurrencyScreen() {
     () => CURRENCIES.findIndex((currency) => currency.code === current.code),
     [current.code]
   );
-  const ref = useRef<FlashList<CurrencyData>>(null);
+  const ref = useRef<List<CurrencyData>>(null);
   const mounted = useRef(false);
 
   const handleLayout = useCallback(() => {
@@ -89,7 +88,7 @@ export default function CurrencyScreen() {
   }, [query]);
 
   return (
-    <Screen
+    <KeyboardAvoidingView
       className={cn('gap-4')}
       onLayout={handleLayout}
     >
@@ -99,13 +98,13 @@ export default function CurrencyScreen() {
         className={cn('mx-4')}
         onChangeText={setQuery}
       />
-      <FlashList
+      <List
         ref={ref}
         extraData={current.code}
         estimatedItemSize={48}
         data={currencies}
         renderItem={renderItem}
       />
-    </Screen>
+    </KeyboardAvoidingView>
   );
 }
