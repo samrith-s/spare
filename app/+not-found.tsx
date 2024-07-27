@@ -1,16 +1,26 @@
-import { Stack } from 'expo-router';
+import { Stack, useNavigation } from 'expo-router';
 
 import { Screen } from '~/components/ui/Box';
-import { Link } from '~/components/ui/Link';
 import { Text } from '~/components/ui/Text';
+import { cn } from '~/utilities/cn';
 
 export default function NotFoundScreen() {
+  const navigation = useNavigation();
+
   return (
     <>
-      <Stack.Screen options={{ title: 'Oops!' }} />
-      <Screen>
+      <Stack.Screen
+        options={{
+          title: 'Oops!',
+          animation: 'fade',
+          animationTypeForReplace: 'pop',
+        }}
+      />
+      <Screen className={cn('items-center', 'justify-center')}>
         <Text size='heading'>This screen doesn't exist.</Text>
-        <Link href='/'>Go to home screen!</Link>
+        <Text onPress={() => navigation.navigate('(tabs)' as never)}>
+          Go to home screen!
+        </Text>
       </Screen>
     </>
   );
