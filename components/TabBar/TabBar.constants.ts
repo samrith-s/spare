@@ -45,7 +45,7 @@ export const TAB_BAR_CONFIG: {
   {
     route: TabBarRoutes.CATEGORIES,
     title: 'Categories',
-    header: true,
+    header: false,
     icon: {
       unfocused: IconListRadio,
       focused: IconListRadio,
