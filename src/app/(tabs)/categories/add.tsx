@@ -1,12 +1,7 @@
 import React from 'react';
 
-import { Screen } from '~/ui/Box';
-import { Text } from '~/ui/Text';
+import { AddOrEditCategory } from '~/screens/AddOrEditCategory';
 
 export default function CategoriesAdd() {
-  return (
-    <Screen>
-      <Text>Hello from add category</Text>
-    </Screen>
-  );
+  return <AddOrEditCategory />;
 }

@@ -1,13 +1,26 @@
 import React from 'react';
 
-import { TextInput as RNTextInput, type TextInputProps } from 'react-native';
+import {
+  Keyboard,
+  TextInput as RNTextInput,
+  type TextInputProps as RNTextInputProps,
+} from 'react-native';
 
 import { cn } from '~/utilities/cn';
 
-export function TextInput({ className, ...rest }: TextInputProps) {
+export type TextInputProps = RNTextInputProps;
+
+export function TextInput({
+  className,
+  blurOnSubmit = true,
+  clearButtonMode = 'always',
+  ...rest
+}: TextInputProps) {
   return (
     <RNTextInput
-      clearButtonMode='always'
+      onSubmitEditing={blurOnSubmit ? Keyboard.dismiss : undefined}
+      blurOnSubmit={blurOnSubmit}
+      clearButtonMode={clearButtonMode}
       className={cn(
         'p-2',
         'rounded-lg',

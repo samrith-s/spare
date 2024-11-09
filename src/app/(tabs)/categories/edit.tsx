@@ -1,12 +1,17 @@
 import React from 'react';
 
-import { Screen } from '~/ui/Box';
-import { Text } from '~/ui/Text';
+import { useLocalSearchParams } from 'expo-router';
+
+import { type Category } from '~/data/categories';
+import { AddOrEditCategory } from '~/screens/AddOrEditCategory';
 
 export default function CategoriesEdit() {
+  const { name, emoji } = useLocalSearchParams<Omit<Category, 'id'>>();
+
   return (
-    <Screen>
-      <Text>Hello from edit category</Text>
-    </Screen>
+    <AddOrEditCategory
+      name={name}
+      emoji={emoji}
+    />
   );
 }

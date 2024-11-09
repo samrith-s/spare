@@ -40,25 +40,28 @@ export const Screen = forwardRef<View, AnimatedProps<ViewProps>>(
   }
 );
 
-export const KeyboardAvoidingView = forwardRef<View, KeyboardAvoidingViewProps>(
-  ({ children, className, contentContainerStyle, style, ...rest }, ref) => {
-    const insets = useContentInsets();
-
-    return (
-      <RNKeyboardAvoidingView
-        keyboardVerticalOffset={insets.bottom}
-        behavior='padding'
-        className={cn('flex-1', className)}
-        contentContainerStyle={[styles.container, contentContainerStyle]}
-        style={[styles.content, style]}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </RNKeyboardAvoidingView>
-    );
+export const KeyboardAvoidingView = forwardRef<
+  View,
+  KeyboardAvoidingViewProps & {
+    enableSafeArea?: boolean;
   }
-);
+>(({ children, className, contentContainerStyle, style, ...rest }, ref) => {
+  const insets = useContentInsets();
+
+  return (
+    <RNKeyboardAvoidingView
+      keyboardVerticalOffset={insets.bottom}
+      behavior='padding'
+      className={cn('flex-1', className)}
+      contentContainerStyle={[styles.container, contentContainerStyle]}
+      style={[styles.content, style]}
+      ref={ref}
+      {...rest}
+    >
+      {children}
+    </RNKeyboardAvoidingView>
+  );
+});
 
 const styles = StyleSheet.create({
   container: {

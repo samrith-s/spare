@@ -14,6 +14,7 @@ export type TabHeaderProps = {
   options: {
     title?: string;
     headerBackVisible?: boolean;
+    presentation?: string;
   };
   route: {
     name: string;
@@ -28,6 +29,8 @@ export function Header({ options, route }: TabHeaderProps) {
 
   const canGoBack = options.headerBackVisible && navigation.canGoBack();
 
+  const isModal = options.presentation === 'modal';
+
   return (
     <Box
       className={cn(
@@ -39,9 +42,14 @@ export function Header({ options, route }: TabHeaderProps) {
         'px-4',
         'gap-4'
       )}
-      style={{
-        paddingTop: top + 12,
-      }}
+      style={[
+        !isModal && {
+          paddingTop: top + 12,
+        },
+        isModal && {
+          paddingTop: 24,
+        },
+      ]}
     >
       {canGoBack && <BackIcon />}
       <Bold className={cn('text-3xl')}>{name}</Bold>
