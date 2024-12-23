@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "include": ["src/theme/**/*.ts"],
-  "compilerOptions": {
-    "module": "CommonJS",
-    "noEmit": false
-  }
-}

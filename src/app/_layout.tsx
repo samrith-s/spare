@@ -26,7 +26,6 @@ import {
 } from '@expo-google-fonts/inter';
 import { useColorScheme, vars } from 'nativewind';
 
-import { headerRenderer } from '~/components/Header';
 import { CurrencyProvider } from '~/providers/Currency';
 import { COLORS } from '~/theme';
 import { cn } from '~/utilities/cn';
@@ -95,6 +94,10 @@ export default function RootLayout() {
       SplashScreen.hideAsync();
     }
   }, [loaded]);
+
+  if (!loaded) {
+    return null;
+  }
 
   return (
     <KeyboardProvider>
