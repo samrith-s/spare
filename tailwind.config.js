@@ -9,7 +9,7 @@ try {
 }
 
 module.exports = {
-  content: ['./src/**/*.{ts,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   presets: [require('nativewind/preset')],
   darkMode: 'class',
   theme: {

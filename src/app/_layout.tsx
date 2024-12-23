@@ -49,6 +49,24 @@ export default function RootLayout() {
   const navigatorTheme = useMemo<Theme>(
     () => ({
       dark: colorScheme === 'dark',
+      fonts: {
+        regular: {
+          fontFamily: 'Inter_400Regular',
+          fontWeight: '400',
+        },
+        medium: {
+          fontFamily: 'Inter_600SemiBold',
+          fontWeight: '600',
+        },
+        bold: {
+          fontFamily: 'Inter_700Bold',
+          fontWeight: '700',
+        },
+        heavy: {
+          fontFamily: 'Inter_700Bold',
+          fontWeight: '700',
+        },
+      },
       colors: {
         background: COLORS[scheme]['--background'],
         card: COLORS[scheme]['--background'],
