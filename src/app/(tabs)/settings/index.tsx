@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import Animated from 'react-native-reanimated';
 
 import { useColorScheme } from 'nativewind';
 
+import { SettingsItem } from '~/components/settings/SettingsItem';
 import { IconExchangeDollarFill } from '~/icons/Finance/ExchangeDollarFill';
 import { IconVipDiamondFill } from '~/icons/Finance/VipDiamondFill';
 import { IconHeadphoneFill } from '~/icons/Media/HeadphoneFill';
 import { IconMoonClearFill } from '~/icons/Weather/MoonClearFill';
-import { SettingsItem } from '~/components/settings/SettingsItem';
 
 import { Screen } from '~/ui/Box';
 import { Switch } from '~/ui/Switch';
@@ -17,10 +17,17 @@ import { cn } from '~/utilities/cn';
 export default function SettingsScreen() {
   const { colorScheme, setColorScheme } = useColorScheme();
 
+  const handleColorSchemeChange = useCallback(
+    (checked: boolean) => {
+      setColorScheme(checked ? 'dark' : 'light');
+    },
+    [setColorScheme]
+  );
+
   return (
-    <Screen className={cn('gap-1', 'pt-4')}>
+    <Screen className={cn('gap-1')}>
       <Animated.ScrollView
-        className={cn('px-3')}
+        contentContainerClassName={cn('px-3', 'pt-4')}
         bounces={false}
       >
         <SettingsItem.Group title='Appearance'>
@@ -30,9 +37,7 @@ export default function SettingsScreen() {
           >
             <Switch
               defaultChecked={colorScheme === 'dark'}
-              onCheckChange={(checked) => {
-                setColorScheme(checked ? 'dark' : 'light');
-              }}
+              onCheckChange={handleColorSchemeChange}
             />
           </SettingsItem.Entry>
           <SettingsItem.Entry

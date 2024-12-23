@@ -40,16 +40,13 @@ export function Header({ options, route }: TabHeaderProps) {
         'bg-background',
         'py-4',
         'px-4',
-        'gap-4'
+        'gap-4',
+        'border-b',
+        'border-tint-lighter'
       )}
-      style={[
-        !isModal && {
-          paddingTop: top + 12,
-        },
-        isModal && {
-          paddingTop: 24,
-        },
-      ]}
+      style={{
+        paddingTop: isModal ? 12 : top + 12,
+      }}
     >
       {canGoBack && <BackIcon />}
       <Bold className={cn('text-3xl')}>{name}</Bold>

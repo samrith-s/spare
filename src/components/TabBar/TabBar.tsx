@@ -3,9 +3,8 @@ import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { TAB_BAR_HEIGHT } from '~/constants/Heights';
+import { Box } from '~/ui/Box';
 import { cn } from '~/utilities/cn';
-
-import { Box } from '../ui/Box';
 
 import { AddButton } from './AddButton';
 import { TAB_BAR_CONFIG } from './TabBar.constants';
@@ -25,7 +24,9 @@ export function TabBar({ state, navigation }: BottomTabBarProps) {
         'self-center',
         'items-center',
         'justify-between',
-        'px-4'
+        'px-4',
+        'border-t',
+        'border-t-tint-lighter'
       )}
       style={{
         height: TAB_BAR_HEIGHT,

@@ -54,6 +54,7 @@ export const TAB_BAR_CONFIG: {
   {
     route: TabBarRoutes.SETTINGS,
     title: 'Settings',
+    header: false,
     icon: {
       unfocused: IconSettings2Line,
       focused: IconSettings2Fill,

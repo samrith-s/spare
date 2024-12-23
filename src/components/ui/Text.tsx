@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-import { Text as RNText, type TextProps as RNTextProps } from 'react-native';
+import {
+  type Text as RNText,
+  type TextProps as RNTextProps,
+} from 'react-native';
+
+import Animated, { type AnimatedProps } from 'react-native-reanimated';
 
 import { type VariantProps, cva } from 'class-variance-authority';
 
@@ -21,54 +26,67 @@ const textVariants = cva(['text-foreground'], {
   },
 });
 
-export type TextProps = RNTextProps & VariantProps<typeof textVariants>;
+export type TextProps = AnimatedProps<RNTextProps> &
+  VariantProps<typeof textVariants>;
 
-export function Text({ children, size, className, style, ...rest }: TextProps) {
-  return (
-    <RNText
-      {...rest}
-      className={cn('text-foreground', textVariants({ size }), className)}
-      style={[
-        {
-          fontFamily: 'Inter_400Regular',
-        },
-        style,
-      ]}
-      {...rest}
-    >
-      {children}
-    </RNText>
-  );
-}
+export const Text = forwardRef<RNText, TextProps>(
+  ({ children, size, className, style, ...rest }, ref) => {
+    return (
+      <Animated.Text
+        ref={ref}
+        {...rest}
+        className={cn('text-foreground', textVariants({ size }), className)}
+        style={[
+          {
+            fontFamily: 'Inter_400Regular',
+          },
+          style,
+        ]}
+        {...rest}
+      >
+        {children}
+      </Animated.Text>
+    );
+  }
+);
+Text.displayName = 'Text';
 
-export function Strong({ style, children, ...rest }: TextProps) {
-  return (
-    <Text
-      {...rest}
-      style={[
-        {
-          fontFamily: 'Inter_600SemiBold',
-        },
-        style,
-      ]}
-    >
-      {children}
-    </Text>
-  );
-}
+export const Strong = forwardRef<RNText, TextProps>(
+  ({ style, children, ...rest }, ref) => {
+    return (
+      <Text
+        ref={ref}
+        {...rest}
+        style={[
+          {
+            fontFamily: 'Inter_600SemiBold',
+          },
+          style,
+        ]}
+      >
+        {children}
+      </Text>
+    );
+  }
+);
+Strong.displayName = 'Strong';
 
-export function Bold({ style, children, ...rest }: TextProps) {
-  return (
-    <Text
-      {...rest}
-      style={[
-        {
-          fontFamily: 'Inter_700Bold',
-        },
-        style,
-      ]}
-    >
-      {children}
-    </Text>
-  );
-}
+export const Bold = forwardRef<RNText, TextProps>(
+  ({ style, children, ...rest }, ref) => {
+    return (
+      <Text
+        ref={ref}
+        {...rest}
+        style={[
+          {
+            fontFamily: 'Inter_700Bold',
+          },
+          style,
+        ]}
+      >
+        {children}
+      </Text>
+    );
+  }
+);
+Bold.displayName = 'Bold';

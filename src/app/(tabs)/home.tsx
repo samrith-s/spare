@@ -1,19 +1,23 @@
-import { ScrollView } from 'react-native-gesture-handler';
+import { type ListRenderItemInfo } from 'react-native';
 
-import { Box, Screen } from '~/ui/Box';
+import { FlatList } from 'react-native-gesture-handler';
+
+import { Screen } from '~/ui/Box';
 import { Text } from '~/ui/Text';
+
+const DATA = Array.from({ length: 100 });
+
+function renderItem({ item, index }: ListRenderItemInfo<any>) {
+  return <Text key={item}>Hello world {index + 1}!</Text>;
+}
 
 export default function HomeScreen() {
   return (
     <Screen>
-      <ScrollView style={{ flex: 1 }}>
-        <Box className={'p-4 bg-destructive'}>
-          <Text className='text-destructive-foreground'>Hello world</Text>
-        </Box>
-        {Array.from({ length: 100 }).map((_, i) => (
-          <Text key={i}>Hello world {i + 1}!</Text>
-        ))}
-      </ScrollView>
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+      />
     </Screen>
   );
 }

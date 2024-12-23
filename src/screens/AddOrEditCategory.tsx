@@ -75,7 +75,7 @@ export function AddOrEditCategory({
   }, []);
 
   return (
-    <Screen className={cn('px-4')}>
+    <Screen className={cn('p-4')}>
       <Box className={cn('flex-row', 'gap-4', 'flex-1', 'shrink-1')}>
         <Pressable
           onPress={() => {

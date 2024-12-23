@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   interpolate,
@@ -21,7 +21,7 @@ import { cn } from '~/utilities/cn';
 
 const DeleteAction = ({ progress }: { progress: SharedValue<number> }) => {
   const style = useAnimatedStyle(() => ({
-    opacity: interpolate(progress.value, [0, -80], [0.25, 1]),
+    opacity: interpolate(progress.value, [0, -80], [0, 1]),
   }));
 
   return (
@@ -31,7 +31,7 @@ const DeleteAction = ({ progress }: { progress: SharedValue<number> }) => {
         'items-end',
         'justify-center',
         'px-4',
-        'rounded-r-lg'
+        'rounded-lg'
       )}
       style={[
         {
@@ -47,22 +47,29 @@ const DeleteAction = ({ progress }: { progress: SharedValue<number> }) => {
 
 export default function CategoriesScreen() {
   const router = useRouter();
+  const [pressDisabled, setPressDisabled] = useState(false);
 
   return (
     <Screen className={cn('gap-4')}>
       <TextInput
+        autoFocus={false}
         placeholder='Search'
         className={cn('mx-4')}
       />
       <Screen className={cn('px-4', 'gap-2')}>
         {CATEGORIES.map((category) => (
-          <Box className={cn('rounded-lg', 'overflow-hidden')}>
+          <Box
+            className={cn('rounded-lg', 'overflow-hidden')}
+            key={category.id}
+          >
             <Swipeable
               overshootLeft={false}
               overshootRight={false}
               renderRightActions={(_, drag) => {
                 return <DeleteAction progress={drag} />;
               }}
+              onBegan={() => setPressDisabled(true)}
+              onEnded={() => setPressDisabled(false)}
               childrenContainerStyle={{
                 pointerEvents: 'none',
               }}
@@ -74,7 +81,8 @@ export default function CategoriesScreen() {
                   'items-center',
                   'px-4',
                   'py-3',
-                  'bg-secondary'
+                  'bg-secondary',
+                  'rounded-lg'
                 )}
                 onPress={() => {
                   router.navigate({
@@ -85,6 +93,7 @@ export default function CategoriesScreen() {
                     },
                   });
                 }}
+                disabled={pressDisabled}
               >
                 <Text>{category.emoji}</Text>
                 <Text>{category.name}</Text>

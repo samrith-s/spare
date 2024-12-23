@@ -8,8 +8,6 @@ import {
 } from 'react-native-keyboard-controller';
 import Animated, { type AnimatedProps } from 'react-native-reanimated';
 
-import { useContentInsets } from '~/hooks/useContentInsets';
-
 import { cn } from '~/utilities/cn';
 
 export const Box = forwardRef<View, AnimatedProps<ViewProps>>(
@@ -27,11 +25,12 @@ export const Box = forwardRef<View, AnimatedProps<ViewProps>>(
 );
 
 export const Screen = forwardRef<View, AnimatedProps<ViewProps>>(
-  ({ children, className, ...rest }, ref) => {
+  ({ children, className, style, ...rest }, ref) => {
     return (
       <Box
-        className={cn('bg-background', className, 'flex-1')}
+        className={cn('bg-background', 'relative', className, 'flex-1')}
         {...rest}
+        style={style}
         ref={ref}
       >
         {children}
@@ -46,11 +45,8 @@ export const KeyboardAvoidingView = forwardRef<
     enableSafeArea?: boolean;
   }
 >(({ children, className, contentContainerStyle, style, ...rest }, ref) => {
-  const insets = useContentInsets();
-
   return (
     <RNKeyboardAvoidingView
-      keyboardVerticalOffset={insets.bottom}
       behavior='padding'
       className={cn('flex-1', className)}
       contentContainerStyle={[styles.container, contentContainerStyle]}

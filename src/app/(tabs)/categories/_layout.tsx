@@ -10,8 +10,8 @@ export default function StackLayout() {
   return (
     <Stack
       screenOptions={{
+        headerShown: true,
         header: headerRenderer,
-        headerBackVisible: false,
       }}
     >
       <Stack.Screen
